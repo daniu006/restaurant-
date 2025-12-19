@@ -14,7 +14,6 @@ import {
   IonMenu,
   IonList,
   IonItem,
-  IonIcon,
   IonLabel,
   IonButtons,
   IonMenuButton 
@@ -39,7 +38,6 @@ import {
     IonMenu, 
     IonList, 
     IonItem, 
-    IonIcon, 
     IonLabel,
     IonButtons,
     IonMenuButton,

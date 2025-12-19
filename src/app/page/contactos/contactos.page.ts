@@ -6,7 +6,6 @@ import {
   IonHeader, 
   IonTitle, 
   IonToolbar, 
-  IonButton, 
   IonCard, 
   IonCardContent,
   IonItem,
@@ -18,14 +17,11 @@ import {
   IonButtons,
   IonInput
 } from '@ionic/angular/standalone';
-import { RouterLink } from '@angular/router';
 import { addIcons } from 'ionicons';
 import { 
   schoolOutline, 
   calendarOutline, 
   bookOutline, 
-  chevronForwardOutline, 
-  arrowBackOutline,
   sendOutline
 } from 'ionicons/icons';
 
@@ -37,12 +33,10 @@ import {
   imports: [
     CommonModule,
     FormsModule,
-    RouterLink,
     IonContent,
     IonHeader,
     IonTitle,
     IonToolbar,
-    IonButton,
     IonCard,
     IonCardContent,
     IonItem,
@@ -57,21 +51,14 @@ import {
 })
 export class ContactosPage implements OnInit {
   constructor() { 
-    
-     addIcons({
+    addIcons({
       'school-outline': schoolOutline,
       'calendar-outline': calendarOutline,
       'book-outline': bookOutline,
-      'chevron-forward-outline': chevronForwardOutline,
-      'arrow-back-outline': arrowBackOutline,
       'send-outline': sendOutline
-     
-   });
+    });
   }
-
-
 
   ngOnInit() {
   }
 }
-

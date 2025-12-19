@@ -1,0 +1,220 @@
+/* Menu Page - Daniu Restaurant */
+
+ion-toolbar {
+  --background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+  --color: white;
+  
+  ion-title {
+    font-family: 'Georgia', serif;
+    font-weight: 700;
+    letter-spacing: 3px;
+  }
+  
+  ion-back-button {
+    --color: white;
+  }
+}
+
+ion-content {
+  --background: linear-gradient(180deg, #fdf6e3 0%, #f5e6c8 50%, #fdf6e3 100%);
+}
+
+.profile-container {
+  padding: 20px;
+  max-width: 500px;
+  margin: 0 auto;
+  animation: slideIn 0.6s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.info-card {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 15px 50px rgba(231, 76, 60, 0.12),
+              0 5px 20px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  
+  ion-card-content {
+    padding: 0;
+  }
+}
+
+.info-section {
+  padding: 24px;
+}
+
+/* Menu item styling */
+.avatar-section {
+  display: flex;
+  justify-content: center;
+  padding: 24px 0 16px 0;
+  position: relative;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #e74c3c, transparent);
+  }
+  
+  &:first-child::before {
+    display: none;
+  }
+  
+  .profile-avatar {
+    width: 100px;
+    height: 100px;
+    border: 4px solid #e74c3c;
+    box-shadow: 0 8px 24px rgba(231, 76, 60, 0.25);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    
+    &:hover {
+      transform: scale(1.1) rotate(-5deg);
+      box-shadow: 0 12px 32px rgba(231, 76, 60, 0.35);
+    }
+    
+    ion-img {
+      border-radius: 50%;
+    }
+  }
+}
+
+/* Different borders for each dish */
+.avatar-section:nth-of-type(1) .profile-avatar {
+  border-color: #f39c12;
+}
+
+.avatar-section:nth-of-type(2) .profile-avatar {
+  border-color: #e74c3c;
+}
+
+.avatar-section:nth-of-type(3) .profile-avatar {
+  border-color: #9b59b6;
+}
+
+h2.info {
+  text-align: center;
+  margin: 8px 0;
+  
+  /* Dish name */
+  &:nth-of-type(3n+1) {
+    font-family: 'Georgia', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #2c3e50;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    
+    &::before {
+      content: '✨';
+      margin-right: 8px;
+    }
+    
+    &::after {
+      content: '✨';
+      margin-left: 8px;
+    }
+  }
+  
+  /* Price */
+  &:nth-of-type(3n+2) {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #e74c3c;
+    background: linear-gradient(135deg, #e74c3c 0%, #f39c12 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+h3.info {
+  text-align: center;
+  font-size: 0.95rem;
+  color: #7f8c8d;
+  font-style: italic;
+  margin: 4px 0 20px 0;
+  padding: 0 20px;
+  line-height: 1.5;
+}
+
+/* Menu categories with badges */
+.avatar-section:nth-of-type(1)::after {
+  content: '🥗';
+  position: absolute;
+  top: 30px;
+  right: calc(50% - 70px);
+  font-size: 1.5rem;
+  animation: bounce 2s infinite;
+}
+
+.avatar-section:nth-of-type(2)::after {
+  content: '🍝';
+  position: absolute;
+  top: 30px;
+  right: calc(50% - 70px);
+  font-size: 1.5rem;
+  animation: bounce 2s infinite 0.3s;
+}
+
+.avatar-section:nth-of-type(3)::after {
+  content: '🍰';
+  position: absolute;
+  top: 30px;
+  right: calc(50% - 70px);
+  font-size: 1.5rem;
+  animation: bounce 2s infinite 0.6s;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+/* Decorative footer */
+.info-section::after {
+  content: '— Buen Provecho —';
+  display: block;
+  text-align: center;
+  padding: 24px 0;
+  font-family: 'Georgia', serif;
+  font-style: italic;
+  color: #bdc3c7;
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+}
+
+/* Responsive */
+@media (max-width: 400px) {
+  h2.info:nth-of-type(3n+1) {
+    font-size: 1.3rem;
+  }
+  
+  h2.info:nth-of-type(3n+2) {
+    font-size: 1.5rem;
+  }
+  
+  .avatar-section .profile-avatar {
+    width: 80px;
+    height: 80px;
+  }
+}

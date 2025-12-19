@@ -6,23 +6,33 @@ import {
   IonHeader, 
   IonTitle, 
   IonToolbar, 
-  IonButton, 
   IonCard, 
   IonCardContent,
-  IonItem,
-  IonLabel,
-  IonIcon,
   IonAvatar,
   IonImg,
   IonBackButton,
   IonButtons
 } from '@ionic/angular/standalone';
+
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.page.html',
   styleUrls: ['./menu.page.scss'],
   standalone: true,
-  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, IonCard, IonCardContent, IonAvatar, IonImg, IonItem, IonLabel, IonIcon, IonButton, IonBackButton, IonButtons  ],
+  imports: [
+    IonContent, 
+    IonHeader, 
+    IonTitle, 
+    IonToolbar, 
+    CommonModule, 
+    FormsModule, 
+    IonCard, 
+    IonCardContent, 
+    IonAvatar, 
+    IonImg, 
+    IonBackButton, 
+    IonButtons
+  ],
 })
 export class MenuPage implements OnInit {
 
